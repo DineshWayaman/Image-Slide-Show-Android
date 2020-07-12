@@ -1,0 +1,4 @@
+add following dependency to yout buid.gradle file
+
+implementation 'com.github.denzcoskun:ImageSlideshow:0.0.6'
+
