@@ -2,3 +2,41 @@ add following dependency to yout buid.gradle file
 
 implementation 'com.github.denzcoskun:ImageSlideshow:0.0.6'
 
+
+After add following code to your activity_main.xml file 
+(@drawable/download is my image i aded in android studio you have to change it for your image)
+
+   <com.denzcoskun.imageslider.ImageSlider
+              android:layout_width="350dp"
+              android:layout_height="200dp"
+              app:placeholder="@drawable/download"
+              app:error_image="@drawable/download"
+              android:gravity="center"
+              android:id="@+id/slider"
+              app:auto_cycle="true"
+              app:delay="0"
+              app:period="1000"
+              app:corner_radius="10"/>
+              
+ add following code to your  MainActivity.java   
+ i have used my firebase image links to this you can use your own web site images link
+ 
+  @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        imageSlider = (ImageSlider)findViewById(R.id.slider);
+ 
+        List<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/web-to-app-eb619.appspot.com/o/Food%20App%20Slide%2Fslide11.jpg?alt=media&token=a16bf6e9-adec-45e6-882d-48a2c26e7ad6","Rice Recipes"));
+        slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/web-to-app-eb619.appspot.com/o/Food%20App%20Slide%2Fslide2.jpg?alt=media&token=bce5ac25-bf7d-4b45-ba6c-d4dd2277fb41","Meat Recipes"));
+        slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/web-to-app-eb619.appspot.com/o/Food%20App%20Slide%2Fslide3.jpg?alt=media&token=2dcda7cf-b316-48f0-8e48-9aaeccc321fc","Cake Recipes"));
+        slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/web-to-app-eb619.appspot.com/o/Food%20App%20Slide%2Fslide4.jpg?alt=media&token=36cea295-fc74-4304-bc94-903917474d86","Fruit Recipes"));
+        slideModels.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/web-to-app-eb619.appspot.com/o/Food%20App%20Slide%2Fslide5.jpg?alt=media&token=64692e6a-704e-4903-b88f-dc39b0dc19e8","Vegetarian Recipes"));
+        imageSlider.setImageList(slideModels,true);
+        
+ 
+          Now Run Your Project If you got any error add comment
+          
+
